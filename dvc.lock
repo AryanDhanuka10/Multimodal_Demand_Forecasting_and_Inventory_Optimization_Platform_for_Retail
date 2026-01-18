@@ -1,0 +1,49 @@
+schema: '2.0'
+stages:
+  generate_data:
+    cmd: python src/data/generate_raw_data.py
+    outs:
+    - path: data/raw/products.csv
+      hash: md5
+      md5: e290abff4b46d6e841c626406e8acd1b
+      size: 98
+    - path: data/raw/reviews.csv
+      hash: md5
+      md5: 45d5ce9ac825812e27fa858908dbe016
+      size: 145
+    - path: data/raw/sales.csv
+      hash: md5
+      md5: 438a371cb3cef8d6b2311d565c5b074b
+      size: 3442
+  preprocess:
+    cmd: python src/data/preprocess.py
+    deps:
+    - path: data/raw/products.csv
+      hash: md5
+      md5: e290abff4b46d6e841c626406e8acd1b
+      size: 98
+    - path: data/raw/reviews.csv
+      hash: md5
+      md5: 45d5ce9ac825812e27fa858908dbe016
+      size: 145
+    - path: data/raw/sales.csv
+      hash: md5
+      md5: 438a371cb3cef8d6b2311d565c5b074b
+      size: 3442
+    - path: src/data/preprocess.py
+      hash: md5
+      md5: 597f5f7844179cb18aa644e14ddf5814
+      size: 1119
+    outs:
+    - path: data/processed/products.csv
+      hash: md5
+      md5: e290abff4b46d6e841c626406e8acd1b
+      size: 98
+    - path: data/processed/reviews.csv
+      hash: md5
+      md5: 45d5ce9ac825812e27fa858908dbe016
+      size: 145
+    - path: data/processed/sales.csv
+      hash: md5
+      md5: 438a371cb3cef8d6b2311d565c5b074b
+      size: 3442

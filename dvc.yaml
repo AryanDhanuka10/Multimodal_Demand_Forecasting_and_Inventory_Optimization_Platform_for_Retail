@@ -1,0 +1,19 @@
+stages:
+  generate_data:
+      cmd: python src/data/generate_raw_data.py
+      outs:
+        - data/raw/sales.csv
+        - data/raw/reviews.csv
+        - data/raw/products.csv
+        
+  preprocess:
+    cmd: python src/data/preprocess.py
+    deps:
+      - src/data/preprocess.py
+      - data/raw/sales.csv
+      - data/raw/reviews.csv
+      - data/raw/products.csv
+    outs:
+      - data/processed/sales.csv
+      - data/processed/reviews.csv
+      - data/processed/products.csv
