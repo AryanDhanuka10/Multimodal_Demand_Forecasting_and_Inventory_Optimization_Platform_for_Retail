@@ -1,0 +1,56 @@
+# Core
+python-dotenv
+pyyaml
+loguru
+
+# Data
+numpy
+pandas
+scikit-learn
+
+# ML / DL
+torch
+torchvision
+pytorch-lightning
+pytorch-forecasting
+xgboost
+
+# NLP
+transformers
+tokenizers
+
+# CV
+opencv-python
+
+# MLOps
+mlflow
+dvc
+
+# Backend
+fastapi
+uvicorn
+fastapi
+uvicorn
+pydantic
+numpy
+pandas
+scikit-learn
+xgboost
+torch
+torchvision
+transformers
+pytorch-forecasting
+pytorch-lightning
+opencv-python
+matplotlib
+seaborn
+mlflow
+dvc
+python-dotenv
+loguru
+
+pydantic
+
+# Visualization (debugging only)
+matplotlib
+seaborn
