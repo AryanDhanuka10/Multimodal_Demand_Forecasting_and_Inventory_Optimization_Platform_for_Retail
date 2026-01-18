@@ -47,3 +47,35 @@ stages:
       hash: md5
       md5: 438a371cb3cef8d6b2311d565c5b074b
       size: 3442
+  build_timeseries_features:
+    cmd: python src/data/build_timeseries_features.py
+    deps:
+    - path: data/processed/sales.csv
+      hash: md5
+      md5: 438a371cb3cef8d6b2311d565c5b074b
+      size: 3442
+    - path: src/data/build_timeseries_features.py
+      hash: md5
+      md5: 6e65c38b7aa16b912858819e133bdbfa
+      size: 834
+    outs:
+    - path: data/features/timeseries_features.csv
+      hash: md5
+      md5: e373f2b6f6cf22a9dd46715661f4f5c5
+      size: 7068
+  train_baseline_model:
+    cmd: python src/models/timeseries.py
+    deps:
+    - path: data/features/timeseries_features.csv
+      hash: md5
+      md5: e373f2b6f6cf22a9dd46715661f4f5c5
+      size: 7068
+    - path: src/models/timeseries.py
+      hash: md5
+      md5: 5240c93453ce31761489e7d0e5d0ce25
+      size: 861
+    outs:
+    - path: data/features/baseline_forecast.csv
+      hash: md5
+      md5: fa7f9082784d5fbed25424210af6ab6b
+      size: 1961
